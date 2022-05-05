@@ -1,36 +1,36 @@
 
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from . serializers import MusicLibrarySerializer
-from . models import MusicLibrary
+from . serializers import SongSerializer
+from . models import Song
 
 @api_view(['GET','POST'])
-def music_library_table(request):
+def song_table(request):
     
     
     if request.method == 'GET':
-        music = MusicLibrary.objects.all()
-        serializer = MusicLibrarySerializer(music, many=True)
+        music = Song.objects.all()
+        serializer = SongSerializer(music, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
     elif request.method == 'POST':
-        serializer = MusicLibrarySerializer(data=request.data)
+        serializer = SongSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)   
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def music_library_detail(request, pk):
-    music = get_object_or_404(MusicLibrary, pk=pk)
+def song_detail(request, pk):
+    music = get_object_or_404(Song, pk=pk)
     if request.method == 'GET':
-        serializer = MusicLibrarySerializer(music)
+        serializer = SongSerializer(music)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == 'PUT':
-        serializer = MusicLibrarySerializer(music, data=request.data)
+        serializer = SongSerializer(music, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)

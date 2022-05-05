@@ -1,12 +1,12 @@
 {
 	"info": {
 		"_postman_id": "0ae26c90-abd2-4962-add2-855988ad61b8",
-		"name": "Music_Library_API",
+		"name": "Song_API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Get_All_Music",
+			"name": "Get_All_Songs",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -30,7 +30,7 @@
 			"response": []
 		},
 		{
-			"name": "Create_Music",
+			"name": "Create_Songs",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -63,7 +63,7 @@
 			"response": []
 		},
 		{
-			"name": "Get_Music_By_Id",
+			"name": "Get_Song_By_Id",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -88,7 +88,7 @@
 			"response": []
 		},
 		{
-			"name": "Update_Music",
+			"name": "Update_Song",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -122,7 +122,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete_Music",
+			"name": "Delete_Song",
 			"request": {
 				"method": "DELETE",
 				"header": [],
